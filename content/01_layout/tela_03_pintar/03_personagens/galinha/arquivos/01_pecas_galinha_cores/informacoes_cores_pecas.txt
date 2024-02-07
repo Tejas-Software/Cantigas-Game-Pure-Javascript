@@ -1,0 +1,25 @@
+As 09 peças da galinha estarão nas cores de acordo com os botões do layout.
+
+Por exemplo, a "peça galinha 01" estará nas cores:
+
+AMARELO: ffed05
+
+AZUL: 00ccff
+
+BEGE: ffcc9a
+
+BRANCO: ffffff
+
+LARANJA: fd8000
+
+MARROM: 875b36
+
+PRETO: 000000
+
+ROSA: ff999a
+
+ROXO: 7f35fe
+
+VERDE: 4efe41
+
+VERMELHO: ff0000
