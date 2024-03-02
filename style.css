@@ -1,0 +1,9 @@
+#botao_claquete, #videos, #botao_paleta, #vamos_pintar, #botao_sol, #vamos_desenhar {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botao_claquete:hover, #videos:hover, #botao_paleta:hover, #vamos_pintar:hover, #botao_sol:hover, #vamos_desenhar:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
