@@ -8,35 +8,35 @@ const GameData = {
         document.body.style.height = window.innerHeight;
         document.body.style.width = window.innerWidth;
     },
-    insertVideoButton: () => {
-        let img1 = document.getElementById("botao_claquete");
-        let img2 = document.getElementById("videos");
+    insertPaintButton: () => {
+        let img1 = document.getElementById("botao_paleta");
+        let img2 = document.getElementById("pintar");
 
         img1.addEventListener("click", () => {location.href = "/src/scenes/videos/index.html"});
         img2.addEventListener("click", () => {location.href = "/src/scenes/videos/index.html"});
 
-        img1.style.width = `${window.innerWidth * 0.11}px`;
-        img1.style.height = `${window.innerHeight * 0.15}px`;
+        img1.style.width = `${window.innerWidth * 0.09}px`;
+        img1.style.height = `${window.innerHeight * 0.18}px`;
 
-        img2.style.width = `${window.innerWidth * 0.25}px`;
+        img2.style.width = `${window.innerWidth * 0.5}px`;
         img2.style.height = `${window.innerHeight * 0.15}px`;
 
         img1.style.position = "absolute";
-        img1.style.top = `${window.innerHeight * 0.1}px`;
-        img1.style.left = `${window.innerWidth * 0.3}px`;
+        img1.style.top = `${window.innerHeight * 0.07}px`;
+        img1.style.left = `${window.innerWidth * 0.2}px`;
         document.body.appendChild(img1);
 
         img2.style.position = "absolute";
         img2.style.top = `${window.innerHeight * 0.10}px`;
-        img2.style.left = `${window.innerWidth * 0.43}px`;
+        img2.style.left = `${window.innerWidth * 0.33}px`;
         document.body.appendChild(img2);
     },
-    insertBoxWithVideos: () => {
+    insertBoxWithPaintings: () => {
 
         const insertEmptyBox = () => {
             let box = document.createElement("div");
             box.style.position = "absolute";
-            box.id = "videos_box";
+            box.id = "painting_box";
             box.style.top = `${window.innerHeight * 0.3}px`;
             box.style.left = `${window.innerWidth * 0.08}px`;
             box.style.width = `${window.innerWidth * 0.85}px`;
@@ -50,7 +50,7 @@ const GameData = {
         };
         insertEmptyBox();
 
-        const insertVideo = (id, src, width, height, backgroundColor, videoThumbnail, title) => {
+        const insertPainting = (id, width, height, backgroundColor, videoThumbnail, title) => {
 
             const insertContainer = () => {
                 let videoContainer = document.createElement("div");
@@ -63,7 +63,7 @@ const GameData = {
                 videoContainer.style.justifyContent = "center";
                 videoContainer.style.backgroundColor = backgroundColor;
     
-                let videosBox = document.getElementById("videos_box");
+                let videosBox = document.getElementById("painting_box");
                 videosBox.appendChild(videoContainer);
             }
             insertContainer();
@@ -80,31 +80,31 @@ const GameData = {
                 thumbnail.addEventListener("click", () => {
                     // Handle thumbnail click event
                 });
-                let video_container = document.getElementById(id);
-                video_container.appendChild(thumbnail);
+                let paint_container = document.getElementById(id);
+                paint_container.appendChild(thumbnail);
 
-                let videoTitle = document.createElement("p");
-                videoTitle.textContent = title;
-                videoTitle.style.marginTop = "5px";
-                videoTitle.style.color = "darkblue";
-                videoTitle.style.fontWeight = "bold";
-                videoTitle.style.fontFamily = "Comic Neue";
-                videoTitle.style.fontSize = "0.6em";
-                videoTitle.style.textAlign = "center";
+                let paintTitle = document.createElement("p");
+                paintTitle.textContent = title;
+                paintTitle.style.marginTop = "5px";
+                paintTitle.style.color = "darkblue";
+                paintTitle.style.fontWeight = "bold";
+                paintTitle.style.fontFamily = "Comic Neue";
+                paintTitle.style.fontSize = "0.6em";
+                paintTitle.style.textAlign = "center";
 
-                video_container.appendChild(videoTitle);
+                paint_container.appendChild(paintTitle);
             };
             insertThumbnailAndTitle();
 
         };
-        insertVideo("video_container_1", "/content/01_layout/tela_02_videos/01_layout/cenario.png", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_02_videos/02_previews/barata.png", "A Barata Diz Que Tem");
-        insertVideo("video_container_2", "/content/01_layout/tela_02_videos/01_layout/cenario.png", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_02_videos/02_previews/pirulito.png", "Pirulito Que Bate Bate");
-        insertVideo("video_container_3", "/content/01_layout/tela_02_videos/01_layout/cenario.png", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_02_videos/02_previews/galinha.png", "A Galinha do Vizinho");
-        insertVideo("video_container_4", "/content/01_layout/tela_02_videos/01_layout/cenario.png", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_02_videos/02_previews/limao.png", "Meu Limão, Meu Limoeiro");
-        insertVideo("video_container_5", "/content/01_layout/tela_02_videos/01_layout/cenario.png", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_02_videos/02_previews/borboletinha.png", "Borboletinha");
-        insertVideo("video_container_6", "/content/01_layout/tela_02_videos/01_layout/cenario.png", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_02_videos/02_previews/canoa.png", "A Canoa Virou");
-        insertVideo("video_container_7", "/content/01_layout/tela_02_videos/01_layout/cenario.png", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_02_videos/02_previews/sapo.png", "O Sapo");
-        insertVideo("video_container_8", "/content/01_layout/tela_02_videos/01_layout/cenario.png", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_02_videos/02_previews/indio.png", "Indiozinhos");
+        insertPainting("paint_container_1", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/barata.png", "A Barata Diz Que Tem");
+        insertPainting("paint_container_2", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/pirulito.png", "Pirulito Que Bate Bate");
+        insertPainting("paint_container_3", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/galinha.png", "A Galinha do Vizinho");
+        insertPainting("paint_container_4", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/limao.png", "Meu Limão, Meu Limoeiro");
+        insertPainting("paint_container_5", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/borboletinha.png", "Borboletinha");
+        insertPainting("paint_container_6", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/canoa.png", "A Canoa Virou");
+        insertPainting("paint_container_7", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/sapo.png", "O Sapo");
+        insertPainting("paint_container_8", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/jacare.png", "Indiozinhos");
 
         
 
@@ -124,8 +124,8 @@ const GameData = {
 };
 
 GameData.createBackground("/content/01_layout/tela_02_videos/01_layout/cenario.png");
-GameData.insertVideoButton();
-GameData.insertBoxWithVideos();
+GameData.insertPaintButton();
+GameData.insertBoxWithPaintings();
 GameData.insertReturnButton();
 
 window.addEventListener('resize', () => { location.reload() });

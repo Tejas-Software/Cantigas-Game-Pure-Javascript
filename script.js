@@ -35,6 +35,9 @@ const GameData = {
         let img1 = document.getElementById("botao_paleta");
         let img2 = document.getElementById("vamos_pintar");
 
+        img1.addEventListener("click", () => {location.href = "/src/scenes/paint/index.html"});
+        img2.addEventListener("click", () => {location.href = "/src/scenes/paint/index.html"});
+
         img1.style.width = `${window.innerWidth * 0.12}px`;
         img1.style.height = `${window.innerHeight * 0.25}px`;
 

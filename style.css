@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+body {
+    font-family: 'Comic Neue', cursive;
+}
+
 #botao_claquete, #videos, #botao_paleta, #vamos_pintar, #botao_sol, #vamos_desenhar {
     cursor: pointer;
     transition: 0.3s;
