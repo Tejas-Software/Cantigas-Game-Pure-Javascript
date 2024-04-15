@@ -2,6 +2,10 @@
 
 body {
     font-family: 'Comic Neue', cursive;
+    width: 100vw;
+    height: 50vw;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 #botao_claquete, #videos, #botao_paleta, #vamos_pintar, #botao_sol, #vamos_desenhar {

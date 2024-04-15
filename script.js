@@ -1,12 +1,14 @@
 
 const GameData = {
     createBackground: (src) => {
-        document.body.style.backgroundImage = `url('${src}')`;
-        document.body.style.backgroundRepeat = 'no-repeat';
-        document.body.style.backgroundColor = "black";
-        document.body.style.backgroundSize = 'cover';
-        document.body.style.height = window.innerHeight;
-        document.body.style.width = window.innerWidth;
+        let img = document.createElement("img");
+        img.src = src;
+        img.style.position = "absolute";
+        img.style.top = "0";
+        img.style.left = "0";
+        img.style.width = "100%";
+        img.style.height = "100%";
+        document.body.appendChild(img);
     },
     insertVideoButton: () => {
         let img1 = document.getElementById("botao_claquete");
@@ -15,20 +17,20 @@ const GameData = {
         img1.addEventListener("click", () => {location.href = "/src/scenes/videos/index.html"});
         img2.addEventListener("click", () => {location.href = "/src/scenes/videos/index.html"});
 
-        img1.style.width = `${window.innerWidth * 0.12}px`;
-        img1.style.height = `${window.innerHeight * 0.20}px`;
+        img1.style.width = `13%`;
+        img1.style.height = `18%`;
 
-        img2.style.width = `${window.innerWidth * 0.25}px`;
-        img2.style.height = `${window.innerHeight * 0.15}px`;
+        img2.style.width = `28%`;
+        img2.style.height = `16%`;
 
         img1.style.position = "absolute";
-        img1.style.top = `${window.innerHeight * 0.1}px`;
-        img1.style.left = `${window.innerWidth * 0.1}px`;
+        img1.style.top = `12%`;
+        img1.style.left = `10%`;
         document.body.appendChild(img1);
 
         img2.style.position = "absolute";
-        img2.style.top = `${window.innerHeight * 0.12}px`;
-        img2.style.left = `${window.innerWidth * 0.28}px`;
+        img2.style.top = `12%`;
+        img2.style.left = `26%`;
         document.body.appendChild(img2);
     },
     insertPaintButton: () => {
@@ -38,40 +40,40 @@ const GameData = {
         img1.addEventListener("click", () => {location.href = "/src/scenes/paint/index.html"});
         img2.addEventListener("click", () => {location.href = "/src/scenes/paint/index.html"});
 
-        img1.style.width = `${window.innerWidth * 0.12}px`;
-        img1.style.height = `${window.innerHeight * 0.25}px`;
+        img1.style.width = `13%`;
+        img1.style.height = `20%`;
 
-        img2.style.width = `${window.innerWidth * 0.45}px`;
-        img2.style.height = `${window.innerHeight * 0.16}px`;
+        img2.style.width = `52%`;
+        img2.style.height = `16%`;
 
         img1.style.position = "absolute";
-        img1.style.top = `${window.innerHeight * 0.35}px`;
-        img1.style.left = `${window.innerWidth * 0.1}px`;
+        img1.style.bottom = `42%`;
+        img1.style.left = `10%`;
         document.body.appendChild(img1);
 
         img2.style.position = "absolute";
-        img2.style.top = `${window.innerHeight * 0.4}px`;
-        img2.style.left = `${window.innerWidth * 0.28}px`;
+        img2.style.top = `40%`;
+        img2.style.left = `26%`;
         document.body.appendChild(img2);
     },
     insertDrawButton: () => {
         let img1 = document.getElementById("botao_sol");
         let img2 = document.getElementById("vamos_desenhar");
 
-        img1.style.width = `${window.innerWidth * 0.12}px`;
-        img1.style.height = `${window.innerHeight * 0.25}px`;
+        img1.style.width = `10%`;
+        img1.style.height = `18%`;
 
-        img2.style.width = `${window.innerWidth * 0.55}px`;
-        img2.style.height = `${window.innerHeight * 0.15}px`;
+        img2.style.width = `65%`;
+        img2.style.height = `15%`;
 
         img1.style.position = "absolute";
-        img1.style.top = `${window.innerHeight * 0.65}px`;
-        img1.style.left = `${window.innerWidth * 0.1}px`;
+        img1.style.bottom = `14%`;
+        img1.style.left = `11.5%`;
         document.body.appendChild(img1);
 
         img2.style.position = "absolute";
-        img2.style.top = `${window.innerHeight * 0.7}px`;
-        img2.style.left = `${window.innerWidth * 0.28}px`;
+        img2.style.bottom = `16%`;
+        img2.style.left = `26.5%`;
         document.body.appendChild(img2);
     }
 };
