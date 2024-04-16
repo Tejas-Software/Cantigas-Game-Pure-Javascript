@@ -60,6 +60,9 @@ const GameData = {
         let img1 = document.getElementById("botao_sol");
         let img2 = document.getElementById("vamos_desenhar");
 
+        img1.addEventListener("click", () => {location.href = "/src/scenes/draw/index.html"});
+        img2.addEventListener("click", () => {location.href = "/src/scenes/draw/index.html"});
+
         img1.style.width = `10%`;
         img1.style.height = `18%`;
 

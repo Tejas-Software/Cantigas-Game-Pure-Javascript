@@ -1,12 +1,14 @@
 
 const GameData = {
     createBackground: (src) => {
-        document.body.style.backgroundImage = `url('${src}')`;
-        document.body.style.backgroundRepeat = 'no-repeat';
-        document.body.style.backgroundColor = "black";
-        document.body.style.backgroundSize = 'cover';
-        document.body.style.height = window.innerHeight;
-        document.body.style.width = window.innerWidth;
+        let img = document.createElement("img");
+        img.src = src;
+        img.style.position = "absolute";
+        img.style.top = "0";
+        img.style.left = "0";
+        img.style.width = "100%";
+        img.style.height = "100%";
+        document.body.appendChild(img);
     },
     insertPaintButton: () => {
         let img1 = document.getElementById("botao_paleta");
@@ -15,20 +17,20 @@ const GameData = {
         img1.addEventListener("click", () => {location.href = "/src/scenes/videos/index.html"});
         img2.addEventListener("click", () => {location.href = "/src/scenes/videos/index.html"});
 
-        img1.style.width = `${window.innerWidth * 0.09}px`;
-        img1.style.height = `${window.innerHeight * 0.18}px`;
+        img1.style.width = `11%`;
+        img1.style.height = `18%`;
 
-        img2.style.width = `${window.innerWidth * 0.5}px`;
-        img2.style.height = `${window.innerHeight * 0.15}px`;
+        img2.style.width = `50%`;
+        img2.style.height = `15%`;
 
         img1.style.position = "absolute";
-        img1.style.top = `${window.innerHeight * 0.07}px`;
-        img1.style.left = `${window.innerWidth * 0.2}px`;
+        img1.style.top = `7%`;
+        img1.style.left = `20%`;
         document.body.appendChild(img1);
 
         img2.style.position = "absolute";
-        img2.style.top = `${window.innerHeight * 0.10}px`;
-        img2.style.left = `${window.innerWidth * 0.33}px`;
+        img2.style.top = `10%`;
+        img2.style.left = `33%`;
         document.body.appendChild(img2);
     },
     insertBoxWithPaintings: () => {
@@ -37,13 +39,13 @@ const GameData = {
             let box = document.createElement("div");
             box.style.position = "absolute";
             box.id = "painting_box";
-            box.style.top = `${window.innerHeight * 0.3}px`;
-            box.style.left = `${window.innerWidth * 0.08}px`;
-            box.style.width = `${window.innerWidth * 0.85}px`;
-            box.style.height = `${window.innerHeight * 0.55}px`;
+            box.style.top = `30%`;
+            box.style.left = `8%`;
+            box.style.width = `85%`;
+            box.style.height = `55%`;
             box.style.display = "flex";
             box.style.flexWrap = "wrap";
-            box.style.gap = `${window.innerWidth * 0.0}px`;
+            box.style.gap = `0%`;
             box.style.justifyContent = "space-around";
             box.style.alignContent = "space-between";
             document.body.appendChild(box);
@@ -55,14 +57,14 @@ const GameData = {
             const insertContainer = () => {
                 let videoContainer = document.createElement("div");
                 videoContainer.id = id;
-                videoContainer.style.width = width;
-                videoContainer.style.height = height;
+                videoContainer.style.width = `22%`;
+                videoContainer.style.height = `44%`;
                 videoContainer.style.backgroundColor = "black";
                 videoContainer.style.display = "flex";
                 videoContainer.style.flexDirection = "column";
                 videoContainer.style.justifyContent = "center";
                 videoContainer.style.backgroundColor = backgroundColor;
-    
+
                 let videosBox = document.getElementById("painting_box");
                 videosBox.appendChild(videoContainer);
             }
@@ -89,7 +91,7 @@ const GameData = {
                 paintTitle.style.color = "darkblue";
                 paintTitle.style.fontWeight = "bold";
                 paintTitle.style.fontFamily = "Comic Neue";
-                paintTitle.style.fontSize = "0.6em";
+                paintTitle.style.fontSize = "12pt";
                 paintTitle.style.textAlign = "center";
 
                 paint_container.appendChild(paintTitle);
@@ -97,14 +99,13 @@ const GameData = {
             insertThumbnailAndTitle();
 
         };
-        insertPainting("paint_container_1", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/barata.png", "A Barata Diz Que Tem");
-        insertPainting("paint_container_2", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/pirulito.png", "Pirulito Que Bate Bate");
-        insertPainting("paint_container_3", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/galinha.png", "A Galinha do Vizinho");
-        insertPainting("paint_container_4", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/limao.png", "Meu Limão, Meu Limoeiro");
-        insertPainting("paint_container_5", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/borboletinha.png", "Borboletinha");
-        insertPainting("paint_container_6", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/canoa.png", "A Canoa Virou");
-        insertPainting("paint_container_7", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/sapo.png", "O Sapo");
-        insertPainting("paint_container_8", `${window.innerWidth * 0.2}px`, `${window.innerHeight * 0.25}px`, "", "/content/01_layout/tela_03_pintar/01_previews/jacare.png", "Indiozinhos");
+        insertPainting("paint_container_1", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/barata.png", "A Barata Diz Que Tem");
+        insertPainting("paint_container_2", `50%`, "22%", "", "/content/01_layout/tela_03_pintar/01_previews/pirulito.png", "Pirulito Que Bate Bate");
+        insertPainting("paint_container_3", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/galinha.png", "A Galinha do Vizinho");
+        insertPainting("paint_container_4", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/limao.png", "Meu Limão, Meu Limoeiro");
+        insertPainting("paint_container_5", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/borboletinha.png", "Borboletinha");
+        insertPainting("paint_container_6", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/canoa.png", "A Canoa Virou");
+        insertPainting("paint_container_7", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/sapo.png", "O Sapo");
 
         
 
@@ -115,9 +116,9 @@ const GameData = {
         returnButton.src = "../../../content/01_layout/tela_02_videos/01_layout/botao_voltar.png";
         returnButton.style.position = "absolute";
         returnButton.addEventListener("click", () => { location.href = "/../../../index.html" });
-        returnButton.style.top = `${window.innerHeight * 0.82}px`;
-        returnButton.style.left = `${window.innerWidth * 0.04}px`;
-        returnButton.style.width = `${window.innerWidth * 0.07}px`;
+        returnButton.style.top = `${window.innerHeight * 0.82 / window.innerHeight * 100}%`;
+        returnButton.style.left = `${window.innerWidth * 0.04 / window.innerWidth * 100}%`;
+        returnButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 100}%`;
         returnButton.style.zIndex = 999;
         document.body.appendChild(returnButton);
     }
