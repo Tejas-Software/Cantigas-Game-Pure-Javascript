@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+body {
+    font-family: 'Comic Neue', cursive;
+    width: 100vw;
+    height: 50vw;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+#botao_claquete, #videos, #botao_paleta, #vamos_pintar, #botao_sol, #vamos_desenhar, .return_button, #thumbnail {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botao_claquete:hover, #videos:hover, #botao_paleta:hover, #vamos_pintar:hover, #botao_sol:hover, #vamos_desenhar:hover, .return_button:hover, #thumbnail:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
