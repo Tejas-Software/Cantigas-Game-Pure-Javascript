@@ -17,7 +17,7 @@ const GameData = {
     },
 
     /**BRUSH PALLETE STUFF */
-    brushSize: 0,
+    brushSize: 1,
     createBrushPallete: () => {
         let brushPallete = document.createElement("div");
         brushPallete.classList.add("brush_pallete");
@@ -44,6 +44,7 @@ const GameData = {
             currentBrush.style.cursor = "pointer";
             currentBrush.addEventListener("click", () => {
                 GameData.brushSize = i;
+                GameData.alterCanvasCursorSize(i);
                 console.log(GameData.brushSize)
             });
             brushPallete.appendChild(currentBrush);
@@ -53,24 +54,157 @@ const GameData = {
     /**CANVAS STUFF */
     ctx: null,
     canDraw: false,
+    drawingCanvas: document.createElement("canvas"),
     drawInCanvas: (x, y) => {
+
         ctx.beginPath();
-        ctx.arc(x, y, GameData.brushSize * 5, 0, 2 * Math.PI);
+
+        if(window.innerHeight > 400 && GameData.brushSize === 1 ) {
+        ctx.arc(x + 5, y + 5, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight > 400 && GameData.brushSize === 2 ) {
+            ctx.arc(x + 10, y + 10, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight > 400 && GameData.brushSize === 3 ) {
+            ctx.arc(x + 15, y + 15, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight > 400 && GameData.brushSize === 4 ) {
+            ctx.arc(x + 20, y + 20, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight > 400 && GameData.brushSize === 5 ) {
+            ctx.arc(x + 25, y + 25, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight > 400 && GameData.brushSize === 6 ) {
+            ctx.arc(x + 20, y + 20, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        /****************************MOBILE**********/
+
+        if(window.innerHeight <= 400 && GameData.brushSize === 1) {
+            ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight <= 400 && GameData.brushSize === 2) {
+            ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight <= 400 && GameData.brushSize === 3) {
+            ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight <= 400 && GameData.brushSize === 4) {
+            ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight <= 400 && GameData.brushSize === 5) {
+            ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+        if(window.innerHeight <= 400 && GameData.brushSize === 6) {
+            ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
+        } 
+
+
+
         ctx.fillStyle = GameData.currentColor;
         ctx.fill();
     },
+    createCanvasCursor: () => {
+        let cursor = document.createElement("div");
+        cursor.classList.add("cursor");
+        cursor.style.position = "absolute";
+        cursor.style.width = "10px";
+        cursor.style.height = "10px";
+        cursor.style.userSelect= "none";
+        cursor.style.borderRadius = "50%";
+        cursor.style.backgroundColor = "black";
+        cursor.style.zIndex = 999;
+        cursor.style.pointerEvents = "none"; // Add this line
+        document.body.appendChild(cursor);
+        document.body.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+    },
+    showCanvasCursor: () => {
+        let cursor = document.querySelector(".cursor");
+        cursor.style.display = "block";
+    },
+    hideCanvasCursor: () => {
+        let cursor = document.querySelector(".cursor");
+        cursor.style.display = "none";
+    },
+    alterCanvasCursorSize: (size) => {
+        let cursor = document.querySelector(".cursor");
+        cursor.style.height = `${size}0px`;
+        cursor.style.width = `${size}0px`;
+        cursor.style.borderRadius = "50%";
+    },
+    alterCanvasCursorColor: (color) => {
+        let cursor = document.querySelector(".cursor");
+        cursor.style.backgroundColor = color;
+        if(color === "white") {
+            cursor.style.border = "1px solid black";
+        } else {
+            cursor.style.border = "none";
+        }
+    },
     createDrawingCanvas: () => {
-        let drawingCanvas = document.createElement("canvas");
-        drawingCanvas.classList.add("drawing_canvas");
-        ctx = drawingCanvas.getContext("2d");
-        drawingCanvas.style.position = "absolute";
-        drawingCanvas.style.top = "8%";
-        drawingCanvas.style.left = "12%";
-        drawingCanvas.style.width = "83%";
-        drawingCanvas.style.borderRadius = "10px";
-        drawingCanvas.style.height = "70%";
-        drawingCanvas.style.backgroundColor = "white";
-        document.body.appendChild(drawingCanvas);
+        GameData.drawingCanvas.classList.add("drawing_canvas");
+        ctx = GameData.drawingCanvas.getContext("2d");
+        GameData.drawingCanvas.style.position = "absolute";
+        GameData.drawingCanvas.style.top = "8%";
+        GameData.drawingCanvas.style.left = "12%";
+        GameData.drawingCanvas.style.width = "83%";
+        GameData.drawingCanvas.style.cursor = "none";
+        GameData.drawingCanvas.style.borderRadius = "10px";
+        GameData.drawingCanvas.style.height = "70%";
+        GameData.drawingCanvas.style.backgroundColor = "white";
+        document.body.appendChild(GameData.drawingCanvas);
+
+        GameData.drawingCanvas.addEventListener("mousemove", (e) => {
+            if(GameData.currentTool === "brush" && GameData.canDraw) {
+                GameData.drawInCanvas(e.offsetX, e.offsetY);
+            }
+        }, false);
+
+        GameData.drawingCanvas.addEventListener("mouseenter", (e) => {
+            if(GameData.currentTool === "brush" && GameData.canDraw) {
+                GameData.drawInCanvas(e.offsetX, e.offsetY);
+                GameData.hideCanvasCursor();
+            } else {
+                GameData.showCanvasCursor();
+            }
+            
+        }, false);
+        GameData.drawingCanvas.addEventListener("mousedown", () => {
+            GameData.canDraw = true;
+            GameData.hideCanvasCursor();
+        }, false);
+        GameData.drawingCanvas.addEventListener("mouseup", () => {
+            GameData.canDraw = false;
+            GameData.showCanvasCursor();
+        }, false);
+        
+
+        GameData.drawingCanvas.addEventListener("touchmove", (e) => {
+            if(GameData.currentTool === "brush" && GameData.canDraw) {
+        
+                GameData.drawInCanvas(e.touches[0].clientX - 100, e.touches[0].clientY);
+            }
+        }, false);
+        GameData.drawingCanvas.addEventListener("touchstart", () => {
+            GameData.canDraw = true;
+            if(GameData.currentTool === "brush" && GameData.canDraw) {
+        
+                GameData.drawInCanvas(e.touches[0].clientX - 100, e.touches[0].clientY);
+            }
+        }, false);
     },
 
 
@@ -104,6 +238,7 @@ const GameData = {
                 eraser.classList.add("eraser");
                 eraser.addEventListener("click", () => {
                     GameData.currentColor = "white";
+                    GameData.alterCanvasCursorColor("white");
                 });
                 colorPallete.appendChild(eraser);
             } else {
@@ -132,7 +267,7 @@ const GameData = {
                         currentColor.style.backgroundColor = "white";
                         break;
                     case 8:
-                        currentColor.style.backgroundColor = "brown";
+                        currentColor.style.backgroundColor = "rgba(66, 38, 0, 1)";
                         break;
                     case 9:
                         currentColor.style.backgroundColor = "black";
@@ -147,6 +282,7 @@ const GameData = {
                 currentColor.style.cursor = "pointer";
                 currentColor.addEventListener("click", () => {
                     GameData.currentColor = currentColor.style.backgroundColor;
+                    GameData.alterCanvasCursorColor(GameData.currentColor);
                 });
                 colorPallete.appendChild(currentColor);
             }
@@ -163,7 +299,7 @@ const GameData = {
         returnButton.addEventListener("click", () => { location.href = "/../../../index.html" });
         returnButton.style.top = `${window.innerHeight * 0.82 / window.innerHeight * 100}%`;
         returnButton.style.left = `${window.innerWidth * 0.04 / window.innerWidth * 100}%`;
-        returnButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 100}%`;
+        returnButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 70}%`;
         returnButton.style.zIndex = 999;
         document.body.appendChild(returnButton);
     }
@@ -175,6 +311,10 @@ GameData.insertReturnButton();
 GameData.createBrushPallete();
 GameData.createDrawingCanvas();
 GameData.createColorPallete();
+if(window.innerHeight > 400) {
+    GameData.createCanvasCursor();
+}
+
 
 window.addEventListener('resize', () => { location.reload() });
 window.addEventListener('load', () => {
@@ -182,27 +322,11 @@ window.addEventListener('load', () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 });
-window.addEventListener("mousemove", (e) => {
-    if(GameData.currentTool === "brush" && GameData.canDraw) {
-        GameData.drawInCanvas(e.offsetX, e.offsetY);
-    }
-}, false);
-window.addEventListener("mousedown", () => {
-    GameData.canDraw = true;
-}, false);
-window.addEventListener("mouseup", () => {
+
+window.addEventListener("touchend", () => {
     GameData.canDraw = false;
 }, false);
 
-window.addEventListener("touchmove", (e) => {
-    if(GameData.currentTool === "brush" && GameData.canDraw) {
-
-        GameData.drawInCanvas(e.touches[0].clientX - 100, e.touches[0].clientY);
-    }
-}, false);
-window.addEventListener("touchstart", () => {
-    GameData.canDraw = true;
-}, false);
-window.addEventListener("touchend", () => {
+window.addEventListener("mouseup", () => {
     GameData.canDraw = false;
 }, false);

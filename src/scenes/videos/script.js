@@ -49,7 +49,7 @@ const GameData = {
             box.style.flexWrap = "wrap";
             box.style.gap = "2%";
             box.style.justifyContent = "space-around";
-            box.style.alignContent = "center";
+            box.style.alignContent = "space-around";
             document.body.appendChild(box);
         };
         insertEmptyBox();
@@ -93,7 +93,7 @@ const GameData = {
                 videoTitle.style.color = "darkblue";
                 videoTitle.style.fontWeight = "bold";
                 videoTitle.style.fontFamily = "Comic Neue";
-                videoTitle.style.fontSize = "12pt";
+                videoTitle.style.fontSize = "10pt";
                 videoTitle.style.textAlign = "center";
 
                 video_container.appendChild(videoTitle);
@@ -118,9 +118,9 @@ const GameData = {
         returnButton.src = "../../../content/01_layout/tela_02_videos/01_layout/botao_voltar.png";
         returnButton.style.position = "absolute";
         returnButton.addEventListener("click", () => { location.href = "/../../../index.html" });
-        returnButton.style.top = "82%";
-        returnButton.style.left = "4%";
-        returnButton.style.width = "7%";
+        returnButton.style.top = "80%";
+        returnButton.style.left = "3.5%";
+        returnButton.style.width = "6%";
         returnButton.style.zIndex = 999;
         document.body.appendChild(returnButton);
     }

@@ -29,7 +29,7 @@ const GameData = {
         document.body.appendChild(img1);
 
         img2.style.position = "absolute";
-        img2.style.top = `10%`;
+        img2.style.top = `7%`;
         img2.style.left = `33%`;
         document.body.appendChild(img2);
     },
@@ -91,7 +91,7 @@ const GameData = {
                 paintTitle.style.color = "darkblue";
                 paintTitle.style.fontWeight = "bold";
                 paintTitle.style.fontFamily = "Comic Neue";
-                paintTitle.style.fontSize = "12pt";
+                paintTitle.style.fontSize = "10pt";
                 paintTitle.style.textAlign = "center";
 
                 paint_container.appendChild(paintTitle);
