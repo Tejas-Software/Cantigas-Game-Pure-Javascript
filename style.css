@@ -2,8 +2,8 @@
 
 body {
     font-family: 'Comic Neue', cursive;
-    /*width: 100vw;*/
-    height: 50vw;
+    width: 100vw;
+
     max-height: 100vh;
     overflow: hidden;
 }
