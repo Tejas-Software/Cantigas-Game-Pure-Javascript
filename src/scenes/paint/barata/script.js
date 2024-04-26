@@ -1,5 +1,5 @@
-
 const GameData = {
+    currentColor: "black",
     createBackground: (src) => {
         let img = document.createElement("img");
         img.src = src;
@@ -24,8 +24,6 @@ const GameData = {
     },
     createDrawnIntoCanvas: () => {
         let canvas = document.getElementById("myCanvas");
-        
-
         let ctx = canvas.getContext("2d");
         let img = new Image();
         img.src = src;
@@ -34,12 +32,48 @@ const GameData = {
             canvas.height = img.height;
             ctx.drawImage(img, 0, 0);
         }
+    },
+    configureElementsToPaint: () => {   
+        
+        GameData.elements.forEach(element => {
+            element.addEventListener("click", () => {
+                element.style.fill = GameData.currentColor;
+            });
+        });
+
+        let colors = document.querySelectorAll(".color");
+        colors.forEach(color => {
+            color.addEventListener("click", () => {
+                GameData.currentColor = color.id;
+            });
+        });
     }
 };
 
-GameData.createBackground("/content/01_layout/tela_02_videos/01_layout/cenario.png");
+const StartGame = () => {
+    window.addEventListener('resize', () => { location.reload() });
+    const configureElements = () => {
+        GameData.element1 = document.querySelector(".peca_barata_01_path");
+        GameData.element2 = document.querySelector(".peca_barata_02_path");
+        GameData.element3 = document.querySelector(".peca_barata_03_path");
+        GameData.element4_1 = document.querySelector(".peca_barata_04_path_1");
+        GameData.element4_2 = document.querySelector(".peca_barata_04_path_2");
+        GameData.element4_3 = document.querySelector(".peca_barata_04_path_3");
+        GameData.element4_4 = document.querySelector(".peca_barata_04_path_4");
+        GameData.element4_5 = document.querySelector(".peca_barata_04_path_5");
+        GameData.element4_6 = document.querySelector(".peca_barata_04_path_6");
+        GameData.element4_7 = document.querySelector(".peca_barata_04_path_7");
+        GameData.element5 = document.querySelector(".peca_barata_05_path");
+        GameData.element6 = document.querySelector(".peca_barata_06_path");
+        GameData.element7 = document.querySelector(".peca_barata_07_path");
+
+        GameData.elements = [GameData.element1, GameData.element2, GameData.element3, GameData.element4_1, GameData.element4_2, GameData.element4_3, GameData.element4_4, GameData.element4_5, GameData.element4_6, GameData.element4_7, GameData.element5, GameData.element6, GameData.element7];
+    }
+    configureElements();
+    GameData.createBackground("/content/01_layout/tela_02_videos/01_layout/cenario.png");
+    GameData.insertReturnButton();
+    GameData.configureElementsToPaint();
+}
+StartGame();
 
 
-GameData.insertReturnButton();
-
-window.addEventListener('resize', () => { location.reload() });

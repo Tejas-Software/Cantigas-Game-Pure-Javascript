@@ -59,53 +59,53 @@ const GameData = {
 
         ctx.beginPath();
 
-        if(window.innerHeight > 400 && GameData.brushSize === 1 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 1 ) {
         ctx.arc(x + 5, y + 5, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 2 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 2 ) {
             ctx.arc(x + 10, y + 10, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 3 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 3 ) {
             ctx.arc(x + 15, y + 15, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 4 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 4 ) {
             ctx.arc(x + 20, y + 20, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 5 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 5 ) {
             ctx.arc(x + 25, y + 25, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 6 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 6 ) {
             ctx.arc(x + 20, y + 20, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
         /****************************MOBILE**********/
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 1) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 1) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 2) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 2) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 3) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 3) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 4) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 4) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 5) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 5) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 6) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 6) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
@@ -311,7 +311,7 @@ GameData.insertReturnButton();
 GameData.createBrushPallete();
 GameData.createDrawingCanvas();
 GameData.createColorPallete();
-if(window.innerHeight > 400) {
+if(window.innerHeight > 450) {
     GameData.createCanvasCursor();
 }
 

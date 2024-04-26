@@ -87,83 +87,95 @@ body {
 
 .peca_barata_01{
     position: absolute;
-    top: 22.1vh;
-    left: 45.8vh;
-    width: 10.3vh;
+    top: 21.1vh;
+    left: 44.3vh;
+    width: 10vh;
     z-index: 1003;
+    pointer-events: none;
 }
-.peca_barata_01:hover{
+.peca_barata_01_path{
+    pointer-events: all;
     cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.05);
 }
 
 .peca_barata_02{
     position: absolute;
-    top: 13vh;
-    left: 40vh;
-    width: 22vh;
+    top: 11vh;
+    left: 38vh;
+    height: 19vh;
     z-index: 1002;
 }
-.peca_barata_02:hover{
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.05);
+.peca_barata_02_path{
+    pointer-events: all;
+    cursor: progress;
 }
 
 
 .peca_barata_03{
     position: absolute;
-    top: 26vh;
-    left: 39vh;
-    width: 25vh;
+    top: 24.5vh;
+    left: 36vh;
+    height: 40vh;
     z-index: 1001;
+    pointer-events: none;
 }
-.peca_barata_03:hover{
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.05);
+.peca_barata_03_path{
+    pointer-events: all;
+    cursor: text;
 }
 
 .peca_barata_04{
     position: absolute;
-    top: 2vh;
-    left: 14vh;
-    width: 71vh;
+    top: 0vh;
+    left: 11.5vh;
+    height: 85vh;
     z-index: 997;
+    pointer-events: none;
 }
-.peca_barata_04:hover{
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.05);
+.peca_barata_04_path_1, .peca_barata_04_path_2, .peca_barata_04_path_3, .peca_barata_04_path_4, .peca_barata_04_path_5, .peca_barata_04_path_6, .peca_barata_04_path_7{
+    pointer-events: all;
+    cursor: cell;
 }
+
 
 .peca_barata_05{
     position: absolute;
-    top: 24vh;
-    left: 31.9vh;
-    width: 38vh;
-    z-index: 998;
+    top: 22vh;
+    left: 28.9vh;
+    height: 53vh;
+    z-index: 990;
+    pointer-events: none;
 }
-.peca_barata_05:hover{
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.05);
+.peca_barata_05_path{
+    pointer-events: all;
+    cursor: crosshair;
 }
+
 
 .peca_barata_06{
     position: absolute;
-    top: 26vh;
-    left: 33.2vh;
-    width: 36vh;
-    z-index: 990;
+    top: 0vw;
+    left: 12vh;
+    height: 85vh;
+    z-index: 1010;
+    pointer-events: none;
+
+}
+.peca_barata_06_path{
+    pointer-events: none;
+    cursor: crosshair;
 }
 
 .peca_barata_07{
     position: absolute;
-    top: 2.3vh;
-    left: 15.2vh;
-    width: 70vh;
+    top: 24.3vh;
+    left: 30.2vh;
+    height: 50vh;
     z-index: 990;
+    pointer-events: none;
+}
+.peca_barata_07_path{
+    pointer-events: none;
+    cursor: crosshair;
 }
 
