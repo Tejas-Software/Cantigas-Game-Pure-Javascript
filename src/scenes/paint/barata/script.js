@@ -1,4 +1,9 @@
 const GameData = {
+
+    //debugging
+    currentDebuggingElement: null,
+    //end debugging
+
     currentColor: "black",
     createBackground: (src) => {
         let img = document.createElement("img");
@@ -38,6 +43,10 @@ const GameData = {
         GameData.elements.forEach(element => {
             element.addEventListener("click", () => {
                 element.style.fill = GameData.currentColor;
+
+                //debugging
+                GameData.currentDebuggingElement = element;
+                GameData.configureDebugging(element);
             });
         });
 
@@ -47,6 +56,34 @@ const GameData = {
                 GameData.currentColor = color.id;
             });
         });
+    },
+    configureDebugging: (element) => {
+
+        let elementNameInfo = document.getElementById("pecaInfo");
+        let elemenTopInfo = document.getElementById("topInfo");
+        let elementLeftInfo = document.getElementById("leftInfo");
+
+        if(element.parentNode.tagName === 'svg') {
+            console.log(element.parentNode);
+            
+        } 
+
+        if(element.parentNode.parentNode.tagName === 'svg') {
+            console.log(element.parentNode.parentNode);
+        } 
+
+        if(element.parentNode.parentNode.parentNode.tagName === 'svg') {
+            console.log(element.parentNode.parentNode.parentNode);
+        } 
+
+        if(element.parentNode.parentNode.parentNode.parentNode.tagName === 'svg') {
+            console.log(element.parentNode.parentNode.parentNode.parentNode);
+        } 
+
+
+
+
+
     }
 };
 

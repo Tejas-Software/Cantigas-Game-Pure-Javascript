@@ -206,6 +206,32 @@ const GameData = {
             }
         }, false);
     },
+    printCanvasWithWatermark: () => {
+        let printWindow = window.open('', '_blank');
+        let canvas = document.querySelector(".drawing_canvas");
+        let dataURL = canvas.toDataURL();
+        let img = new Image();
+        img.src = dataURL;
+    
+        let watermark = new Image();
+        watermark.src = "../../../content/click_ideia_logo.jpg";
+    
+        let imagesLoaded = 0;
+    
+        let printWhenImagesLoaded = () => {
+            imagesLoaded++;
+            if (imagesLoaded === 2) {
+                printWindow.print();
+                printWindow.close();
+            }
+        };
+    
+        img.onload = printWhenImagesLoaded;
+        watermark.onload = printWhenImagesLoaded;
+    
+        printWindow.document.write('<img src="' + img.src + '"/>');
+        printWindow.document.write('<img src="' + watermark.src + '" style="position: absolute; bottom: 0%; left: 0%; opacity: 0.5;">');
+    },
 
 
     /**COLOR PALLETE STUFF */
@@ -302,6 +328,18 @@ const GameData = {
         returnButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 70}%`;
         returnButton.style.zIndex = 999;
         document.body.appendChild(returnButton);
+    },
+    insertPrintButton: () => {
+        let printButton = document.createElement("img");
+        printButton.classList.add("print_button");
+        printButton.src = "../../../content/01_layout/tela_04_desenhar/botoes/botao_imprimir.png";
+        printButton.style.position = "absolute";
+        printButton.addEventListener("click", () => { GameData.printCanvasWithWatermark(); });
+        printButton.style.top = `${window.innerHeight * 0.82 / window.innerHeight * 10}%`;
+        printButton.style.left = `${window.innerWidth * 0.89 / window.innerWidth * 100}%`;
+        printButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 70}%`;
+        printButton.style.zIndex = 999;
+        document.body.appendChild(printButton);
     }
 };
 
@@ -311,6 +349,7 @@ GameData.insertReturnButton();
 GameData.createBrushPallete();
 GameData.createDrawingCanvas();
 GameData.createColorPallete();
+GameData.insertPrintButton();
 if(window.innerHeight > 450) {
     GameData.createCanvasCursor();
 }

@@ -100,7 +100,7 @@ const GameData = {
 
         };
         insertPainting("paint_container_1", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/barata.png", "A Barata Diz Que Tem", "/src/scenes/paint/barata/index.html");
-        insertPainting("paint_container_2", `50%`, "22%", "", "/content/01_layout/tela_03_pintar/01_previews/pirulito.png", "Pirulito Que Bate Bate");
+        insertPainting("paint_container_2", `50%`, "22%", "", "/content/01_layout/tela_03_pintar/01_previews/pirulito.png", "Pirulito Que Bate Bate", "/src/scenes/paint/pirulito/index.html");
         insertPainting("paint_container_3", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/galinha.png", "A Galinha do Vizinho");
         insertPainting("paint_container_4", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/limao.png", "Meu Limão, Meu Limoeiro");
         insertPainting("paint_container_5", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/borboletinha.png", "Borboletinha");
