@@ -57,7 +57,7 @@ const GameData = {
         let divContent = document.getElementById('myCanvas').innerHTML;
     
         // Adicione a marca d'água
-        divContent += '<img src="../../../../content/click_ideia_logo.jpg" style="position: absolute; bottom: 0%; left: 0%; opacity: 0.5;">';
+        divContent += '<img src="../../../../content/click_ideia_logo.jpg" style="position: absolute; bottom: 0%; left: 0%; opacity: 0.5; transform:scale(0.9);">';
     
         // Escreva o conteúdo na nova janela
         printWindow.document.write('<html><head><title>Print</title>');
@@ -108,10 +108,25 @@ const StartGame = () => {
         GameData.element24 = document.getElementById("24");
         GameData.element25 = document.getElementById("25");
         GameData.element26 = document.getElementById("26");
+        GameData.element27 = document.getElementById("27");
+        GameData.element28 = document.getElementById("28");
+        GameData.element29 = document.getElementById("29");
+        GameData.element30 = document.getElementById("30");
+        GameData.element31 = document.getElementById("31");
+        GameData.element32 = document.getElementById("32");
+        GameData.element33 = document.getElementById("33");
+        GameData.element34 = document.getElementById("34");
+        GameData.element35 = document.getElementById("35");
+        GameData.element36 = document.getElementById("36");
+        GameData.element37 = document.getElementById("37");
+        GameData.element38 = document.getElementById("38");
+        GameData.element39 = document.getElementById("39");
+        GameData.element40 = document.getElementById("40");
 
 
 
-        GameData.elements = [GameData.element1, GameData.element2, GameData.element3, GameData.element4, GameData.element5, GameData.element6, GameData.element7, GameData.element8, GameData.element9, GameData.element10, GameData.element11, GameData.element12, GameData.element13, GameData.element14, GameData.element15, GameData.element16, GameData.element17, GameData.element18, GameData.element19, GameData.element20, GameData.element21, GameData.element22, GameData.element23, GameData.element24, GameData.element25, GameData.element26];
+
+        GameData.elements = [GameData.element1, GameData.element2, GameData.element3, GameData.element4, GameData.element5, GameData.element6, GameData.element7, GameData.element8, GameData.element9, GameData.element10, GameData.element11, GameData.element12, GameData.element13, GameData.element14, GameData.element15, GameData.element16, GameData.element17, GameData.element18, GameData.element19, GameData.element20, GameData.element21, GameData.element22, GameData.element23, GameData.element24, GameData.element25, GameData.element26, GameData.element27, GameData.element28, GameData.element29, GameData.element30, GameData.element31, GameData.element32, GameData.element33, GameData.element34, GameData.element35, GameData.element36, GameData.element37, GameData.element38, GameData.element39, GameData.element40];
     }
     configureElements();
     const configureClicks = () => {

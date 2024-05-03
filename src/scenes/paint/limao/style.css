@@ -90,11 +90,11 @@ svg{
     height: 100%;
 }
 
-.fil0{
+.fil1, .fil2, .fil3, .fil4, .fil5, .fil6{
     pointer-events: none;
 }
 
-.fil1, .fil2, .fil3, .fil4, .fil5{
+.fil0{
     pointer-events: all;
     cursor: pointer;
 }

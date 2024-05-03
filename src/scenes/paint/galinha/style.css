@@ -94,7 +94,7 @@ svg{
     pointer-events: none;
 }
 
-.fil1, .fil2, .fil3, .fil4, .fil5{
+.fil1, .fil2, .fil3, .fil4, .fil5, .fil6, .fil7, .fil8, .fil9, .fil10{
     pointer-events: all;
     cursor: pointer;
 }

@@ -185,10 +185,16 @@ const GameData = {
         GameData.drawingCanvas.addEventListener("mousedown", () => {
             GameData.canDraw = true;
             GameData.hideCanvasCursor();
+
+                let printButton = document.querySelector(".print_button");
+                printButton.style.pointerEvents = "none";
         }, false);
         GameData.drawingCanvas.addEventListener("mouseup", () => {
             GameData.canDraw = false;
             GameData.showCanvasCursor();
+
+            let printButton = document.querySelector(".print_button");
+            printButton.style.pointerEvents = "all";
         }, false);
         
 
