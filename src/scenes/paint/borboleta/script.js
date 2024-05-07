@@ -15,7 +15,7 @@ const GameData = {
         returnButton.classList.add("return_button");
         returnButton.src = "../../../../content/01_layout/tela_02_videos/01_layout/botao_voltar.png";
         returnButton.style.position = "absolute";
-        returnButton.addEventListener("click", () => { location.href = "/../../../index.html" });
+        returnButton.addEventListener("click", () => { location.href = "../index.html" });
         returnButton.style.top = `${window.innerHeight * 0.82 / window.innerHeight * 103}%`;
         returnButton.style.left = `${window.innerWidth * 0.04 / window.innerWidth * 100}%`;
         returnButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 70}%`;

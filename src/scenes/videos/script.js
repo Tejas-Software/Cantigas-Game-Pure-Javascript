@@ -54,7 +54,7 @@ const GameData = {
         };
         insertEmptyBox();
 
-        const insertVideo = (id, src, width, height, backgroundColor, videoThumbnail, title) => {
+        const insertVideo = (id, src, width, height, backgroundColor, videoThumbnail, title, link) => {
 
             const insertContainer = () => {
                 let videoContainer = document.createElement("div");
@@ -82,7 +82,7 @@ const GameData = {
                 thumbnail.style.objectFit = "cover";
                 thumbnail.style.cursor = "pointer";
                 thumbnail.addEventListener("click", () => {
-                    // Handle thumbnail click event
+                    location.href = link;
                 });
                 let video_container = document.getElementById(id);
                 video_container.appendChild(thumbnail);
@@ -101,7 +101,7 @@ const GameData = {
             insertThumbnailAndTitle();
 
         };
-        insertVideo("video_container_1", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/barata.png", "A Barata Diz Que Tem");
+        insertVideo("video_container_1", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/barata.png", "A Barata Diz Que Tem", "./barata/index.html");
         insertVideo("video_container_2", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/pirulito.png", "Pirulito Que Bate Bate");
         insertVideo("video_container_3", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/galinha.png", "A Galinha do Vizinho");
         insertVideo("video_container_4", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/limao.png", "Meu Limão, Meu Limoeiro");

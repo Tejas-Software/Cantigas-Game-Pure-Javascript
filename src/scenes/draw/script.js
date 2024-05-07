@@ -208,7 +208,9 @@ const GameData = {
             GameData.canDraw = true;
             if(GameData.currentTool === "brush" && GameData.canDraw) {
         
-                GameData.drawInCanvas(e.touches[0].clientX - 100, e.touches[0].clientY);
+                if(e){
+                    GameData.drawInCanvas(e.touches[0].clientX - 100, e.touches[0].clientY);
+                }
             }
         }, false);
     },
