@@ -59,53 +59,53 @@ const GameData = {
 
         ctx.beginPath();
 
-        if(window.innerHeight > 400 && GameData.brushSize === 1 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 1 ) {
         ctx.arc(x + 5, y + 5, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 2 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 2 ) {
             ctx.arc(x + 10, y + 10, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 3 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 3 ) {
             ctx.arc(x + 15, y + 15, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 4 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 4 ) {
             ctx.arc(x + 20, y + 20, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 5 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 5 ) {
             ctx.arc(x + 25, y + 25, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight > 400 && GameData.brushSize === 6 ) {
+        if(window.innerHeight > 450 && GameData.brushSize === 6 ) {
             ctx.arc(x + 20, y + 20, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
         /****************************MOBILE**********/
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 1) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 1) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 2) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 2) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 3) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 3) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 4) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 4) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 5) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 5) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
-        if(window.innerHeight <= 400 && GameData.brushSize === 6) {
+        if(window.innerHeight <= 450 && GameData.brushSize === 6) {
             ctx.arc(x + 5, y - 30, GameData.brushSize * 5, 0, 2 * Math.PI);
         } 
 
@@ -185,10 +185,16 @@ const GameData = {
         GameData.drawingCanvas.addEventListener("mousedown", () => {
             GameData.canDraw = true;
             GameData.hideCanvasCursor();
+
+                let printButton = document.querySelector(".print_button");
+                printButton.style.pointerEvents = "none";
         }, false);
         GameData.drawingCanvas.addEventListener("mouseup", () => {
             GameData.canDraw = false;
             GameData.showCanvasCursor();
+
+            let printButton = document.querySelector(".print_button");
+            printButton.style.pointerEvents = "all";
         }, false);
         
 
@@ -202,9 +208,37 @@ const GameData = {
             GameData.canDraw = true;
             if(GameData.currentTool === "brush" && GameData.canDraw) {
         
-                GameData.drawInCanvas(e.touches[0].clientX - 100, e.touches[0].clientY);
+                if(e){
+                    GameData.drawInCanvas(e.touches[0].clientX - 100, e.touches[0].clientY);
+                }
             }
         }, false);
+    },
+    printCanvasWithWatermark: () => {
+        let printWindow = window.open('', '_blank');
+        let canvas = document.querySelector(".drawing_canvas");
+        let dataURL = canvas.toDataURL();
+        let img = new Image();
+        img.src = dataURL;
+    
+        let watermark = new Image();
+        watermark.src = "../../../content/click_ideia_logo.jpg";
+    
+        let imagesLoaded = 0;
+    
+        let printWhenImagesLoaded = () => {
+            imagesLoaded++;
+            if (imagesLoaded === 2) {
+                printWindow.print();
+                printWindow.close();
+            }
+        };
+    
+        img.onload = printWhenImagesLoaded;
+        watermark.onload = printWhenImagesLoaded;
+    
+        printWindow.document.write('<img src="' + img.src + '"/>');
+        printWindow.document.write('<img src="' + watermark.src + '" style="position: absolute; bottom: 0%; left: 0%; opacity: 0.5;">');
     },
 
 
@@ -302,6 +336,18 @@ const GameData = {
         returnButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 70}%`;
         returnButton.style.zIndex = 999;
         document.body.appendChild(returnButton);
+    },
+    insertPrintButton: () => {
+        let printButton = document.createElement("img");
+        printButton.classList.add("print_button");
+        printButton.src = "../../../content/01_layout/tela_04_desenhar/botoes/botao_imprimir.png";
+        printButton.style.position = "absolute";
+        printButton.addEventListener("click", () => { GameData.printCanvasWithWatermark(); });
+        printButton.style.top = `${window.innerHeight * 0.82 / window.innerHeight * 10}%`;
+        printButton.style.left = `${window.innerWidth * 0.89 / window.innerWidth * 100}%`;
+        printButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 70}%`;
+        printButton.style.zIndex = 999;
+        document.body.appendChild(printButton);
     }
 };
 
@@ -311,7 +357,8 @@ GameData.insertReturnButton();
 GameData.createBrushPallete();
 GameData.createDrawingCanvas();
 GameData.createColorPallete();
-if(window.innerHeight > 400) {
+GameData.insertPrintButton();
+if(window.innerHeight > 450) {
     GameData.createCanvasCursor();
 }
 

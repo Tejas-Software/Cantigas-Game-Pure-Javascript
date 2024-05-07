@@ -52,7 +52,7 @@ const GameData = {
         };
         insertEmptyBox();
 
-        const insertPainting = (id, width, height, backgroundColor, videoThumbnail, title) => {
+        const insertPainting = (id, width, height, backgroundColor, videoThumbnail, title, link) => {
 
             const insertContainer = () => {
                 let videoContainer = document.createElement("div");
@@ -80,7 +80,7 @@ const GameData = {
                 thumbnail.style.objectFit = "cover";
                 thumbnail.style.cursor = "pointer";
                 thumbnail.addEventListener("click", () => {
-                    // Handle thumbnail click event
+                    location.href = link;
                 });
                 let paint_container = document.getElementById(id);
                 paint_container.appendChild(thumbnail);
@@ -99,13 +99,13 @@ const GameData = {
             insertThumbnailAndTitle();
 
         };
-        insertPainting("paint_container_1", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/barata.png", "A Barata Diz Que Tem");
-        insertPainting("paint_container_2", `50%`, "22%", "", "/content/01_layout/tela_03_pintar/01_previews/pirulito.png", "Pirulito Que Bate Bate");
-        insertPainting("paint_container_3", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/galinha.png", "A Galinha do Vizinho");
-        insertPainting("paint_container_4", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/limao.png", "Meu Limão, Meu Limoeiro");
-        insertPainting("paint_container_5", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/borboletinha.png", "Borboletinha");
-        insertPainting("paint_container_6", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/canoa.png", "A Canoa Virou");
-        insertPainting("paint_container_7", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/sapo.png", "O Sapo");
+        insertPainting("paint_container_1", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/barata.png", "A Barata Diz Que Tem", "/src/scenes/paint/barata/index.html");
+        insertPainting("paint_container_2", `50%`, "22%", "", "/content/01_layout/tela_03_pintar/01_previews/pirulito.png", "Pirulito Que Bate Bate", "/src/scenes/paint/pirulito/index.html");
+        insertPainting("paint_container_3", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/galinha.png", "A Galinha do Vizinho", "/src/scenes/paint/galinha/index.html");
+        insertPainting("paint_container_4", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/limao.png", "Meu Limão, Meu Limoeiro", "/src/scenes/paint/limao/index.html");
+        insertPainting("paint_container_5", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/borboletinha.png", "Borboletinha", "/src/scenes/paint/borboleta/index.html");
+        insertPainting("paint_container_6", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/canoa.png", "A Canoa Virou", "/src/scenes/paint/peixe/index.html");
+        insertPainting("paint_container_7", `50%`, `22%`, "", "/content/01_layout/tela_03_pintar/01_previews/sapo.png", "O Sapo", "/src/scenes/paint/sapo/index.html");
 
         
 

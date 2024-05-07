@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+body {
+    font-family: 'Comic Neue', cursive;
+
+    overflow: hidden;
+}
+
+#botao_claquete, #videos, #botao_paleta, #vamos_pintar, #botao_sol, #vamos_desenhar, .return_button, #thumbnail {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botao_claquete:hover, #videos:hover, #botao_paleta:hover, #vamos_pintar:hover, #botao_sol:hover, #vamos_desenhar:hover, .return_button:hover, #thumbnail:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.paintingColors{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 45%;
+    height: 100%;
+}
+
+.paintingDrawning{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.mainPaintingArea{
+    position: relative;
+    top: 4.8vh;
+    left: 10%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    height: 88vh;
+}
+
+.color{
+    width: 45%;
+    height: 15%;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    gap: 3%;
+    align-items: center;
+    border: none;
+    box-shadow: 0px 0px 10px 0px gray;
+    border-radius: 10px;
+    padding-left: 2%;
+}
+
+.colorIcon{
+    width: 30%;
+    height: 60%;
+    border-radius: 10px;
+}
+
+.colorName{
+    font-size: 2.4vw;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.printIcon{
+    width: 35%;
+}
+
+#printArea{
+    display: flex;
+    justify-content: center;
+}
+
+svg{
+    width: 100%;
+    height: 100%;
+}
+
+.fil1, .fil2, .fil3, .fil4, .fil5, .fil6{
+    pointer-events: none;
+}
+
+.fil0{
+    pointer-events: all;
+    cursor: pointer;
+}
