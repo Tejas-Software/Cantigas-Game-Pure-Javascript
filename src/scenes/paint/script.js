@@ -20,17 +20,17 @@ const GameData = {
         img1.style.width = `11%`;
         img1.style.height = `18%`;
 
-        img2.style.width = `50%`;
+        img2.style.width = `30%`;
         img2.style.height = `15%`;
 
         img1.style.position = "absolute";
         img1.style.top = `7%`;
-        img1.style.left = `20%`;
+        img1.style.left = `30%`;
         document.body.appendChild(img1);
 
         img2.style.position = "absolute";
-        img2.style.top = `7%`;
-        img2.style.left = `33%`;
+        img2.style.top = `10%`;
+        img2.style.left = `43%`;
         document.body.appendChild(img2);
     },
     insertBoxWithPaintings: () => {

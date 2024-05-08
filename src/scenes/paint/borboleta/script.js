@@ -83,7 +83,7 @@ const GameData = {
 };
 
 const StartGame = () => {
-    window.addEventListener('resize', () => { location.reload() });
+    //window.addEventListener('resize', () => { location.reload() });
     const configureElements = () => {
         GameData.element1 = document.getElementById("1");
         GameData.element2 = document.getElementById("2");

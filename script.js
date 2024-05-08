@@ -20,8 +20,8 @@ const GameData = {
         img1.style.width = `13%`;
         img1.style.height = `18%`;
 
-        img2.style.width = `28%`;
-        img2.style.height = `16%`;
+        img2.style.width = `30%`;
+        img2.style.height = `19%`;
 
         img1.style.position = "absolute";
         img1.style.top = `12%`;
@@ -29,7 +29,7 @@ const GameData = {
         document.body.appendChild(img1);
 
         img2.style.position = "absolute";
-        img2.style.top = `12%`;
+        img2.style.top = `11%`;
         img2.style.left = `26%`;
         document.body.appendChild(img2);
     },
@@ -43,7 +43,7 @@ const GameData = {
         img1.style.width = `13%`;
         img1.style.height = `20%`;
 
-        img2.style.width = `52%`;
+        img2.style.width = `30%`;
         img2.style.height = `16%`;
 
         img1.style.position = "absolute";
@@ -66,7 +66,7 @@ const GameData = {
         img1.style.width = `10%`;
         img1.style.height = `18%`;
 
-        img2.style.width = `65%`;
+        img2.style.width = `45%`;
         img2.style.height = `15%`;
 
         img1.style.position = "absolute";

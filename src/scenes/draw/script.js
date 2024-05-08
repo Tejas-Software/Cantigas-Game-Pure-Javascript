@@ -366,7 +366,7 @@ if(window.innerHeight > 450) {
 }
 
 
-window.addEventListener('resize', () => { location.reload() });
+//window.addEventListener('resize', () => { location.reload() });
 window.addEventListener('load', () => {
     let canvas = document.querySelector(".drawing_canvas");
     canvas.width = canvas.offsetWidth;
