@@ -102,12 +102,12 @@ const GameData = {
 
         };
         insertVideo("video_container_1", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/barata.png", "A Barata Diz Que Tem", "./barata/index.html");
-        insertVideo("video_container_2", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/pirulito.png", "Pirulito Que Bate Bate");
-        insertVideo("video_container_3", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/galinha.png", "A Galinha do Vizinho");
-        insertVideo("video_container_4", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/limao.png", "Meu Limão, Meu Limoeiro");
-        insertVideo("video_container_5", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/borboletinha.png", "Borboletinha");
-        insertVideo("video_container_6", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/canoa.png", "A Canoa Virou");
-        insertVideo("video_container_7", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/sapo.png", "O Sapo");
+        insertVideo("video_container_2", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/pirulito.png", "Pirulito Que Bate Bate", "./pirulito/index.html");
+        insertVideo("video_container_3", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/galinha.png", "A Galinha do Vizinho", "./galinha/index.html");
+        insertVideo("video_container_4", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/limao.png", "Meu Limão, Meu Limoeiro", "./limao/index.html");
+        insertVideo("video_container_5", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/borboletinha.png", "Borboletinha", "./borboleta/index.html");
+        insertVideo("video_container_6", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/canoa.png", "A Canoa Virou", "./canoa/index.html");
+        insertVideo("video_container_7", "/content/01_layout/tela_02_videos/01_layout/cenario.png", "22%", "36%", "", "/content/01_layout/tela_02_videos/02_previews/sapo.png", "O Sapo", "./sapo/index.html");
 
         
 
