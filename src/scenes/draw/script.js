@@ -222,7 +222,7 @@ const GameData = {
         img.src = dataURL;
     
         let watermark = new Image();
-        watermark.src = "../../../../content/click_ideia_logo.jpg";
+        watermark.src = "./click_ideia_logo.jpg";
     
         let imagesLoaded = 0;
     
