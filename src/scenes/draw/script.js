@@ -216,8 +216,6 @@ const GameData = {
     },
     printCanvasWithWatermark: () => {
 
-        console.log("filho da puta")
-
         let printWindow = window.open('', '_blank');
         let canvas = document.querySelector(".drawing_canvas");
         let dataURL = canvas.toDataURL();
@@ -225,7 +223,7 @@ const GameData = {
         img.src = dataURL;
     
         let watermark = new Image();
-        watermark.src = "click_ideia_logo.jpg";
+        watermark.src = "https://media.licdn.com/dms/image/C510BAQHiDc9diNIDGg/company-logo_200_200/0/1631379679960?e=2147483647&v=beta&t=ongRAZYSUMib7IP8VTPSnXyTUoV46UuQ7FHFrEzSn04";
     
         let imagesLoaded = 0;
     
@@ -236,17 +234,12 @@ const GameData = {
                 printWindow.close();
             }
         };
-
-        console.log(" ta imprimindo demonho?")
-
-
-        console.log(watermark)
     
         img.onload = printWhenImagesLoaded;
         watermark.onload = printWhenImagesLoaded;
     
         printWindow.document.write('<img src="' + img.src + '"/>');
-        printWindow.document.write('<img src="click_ideia_logo.jpg" style="position: absolute; bottom: 0%; left: 0%; opacity: 0.5;">');
+        printWindow.document.write('<img src="https://media.licdn.com/dms/image/C510BAQHiDc9diNIDGg/company-logo_200_200/0/1631379679960?e=2147483647&v=beta&t=ongRAZYSUMib7IP8VTPSnXyTUoV46UuQ7FHFrEzSn04" style="position: absolute; bottom: 0%; left: 0%; opacity: 0.5;">');
 
         
     },
