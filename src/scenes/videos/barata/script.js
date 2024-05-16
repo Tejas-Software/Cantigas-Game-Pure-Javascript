@@ -10,6 +10,18 @@ const GameData = {
         img.style.height = "100%";
         document.body.appendChild(img);
     },
+    createVideoOverlayLayout: () => {
+        let overlay = document.createElement("img");
+        overlay.src = "../../../../content/01_layout/tela_02_videos/03_videos/00_layout_video/video_layout_azul.png";
+        overlay.style.position = "absolute";
+        overlay.style.top = "0";
+        overlay.style.left = "0";
+        overlay.style.width = "100%";
+        overlay.style.height = "100%";
+        overlay.style.zIndex = 1000;
+        document.body.appendChild(overlay);
+        
+    },
     insertCloseButton: () => {
         let returnButton = document.createElement("img");
         returnButton.classList.add("return_button");
@@ -19,7 +31,7 @@ const GameData = {
         returnButton.style.top = `${window.innerHeight * 0.82 / window.innerHeight * 3}%`;
         returnButton.style.left = `${window.innerWidth * 0.93 / window.innerWidth * 100}%`;
         returnButton.style.width = `${window.innerWidth * 0.07 / window.innerWidth * 70}%`;
-        returnButton.style.zIndex = 1000;
+        returnButton.style.zIndex = 1001;
         document.body.appendChild(returnButton);
     },
     insertPlayButton: () => {
@@ -31,7 +43,7 @@ const GameData = {
     playButton.style.bottom = `${window.innerHeight * 0.82 / window.innerHeight * 3}%`;
     playButton.style.right = `${window.innerWidth * 0.93 / window.innerWidth * 100}%`;
     playButton.style.width = `${window.innerWidth * 0.05 / window.innerWidth * 70}%`;
-    playButton.style.zIndex = 1000;
+    playButton.style.zIndex = 1001;
     document.body.appendChild(playButton);
 
     video.addEventListener("play", () => {
@@ -77,7 +89,7 @@ const GameData = {
         volumeButton.style.bottom = `${window.innerHeight * 0.2 / window.innerHeight * 3}%`;
         volumeButton.style.right = `${window.innerWidth * 0.88 / window.innerWidth * 100}%`;
         volumeButton.style.width = `${window.innerWidth * 0.04 / window.innerWidth * 70}%`;
-        volumeButton.style.zIndex = 1000;
+        volumeButton.style.zIndex = 1001;
         document.body.appendChild(volumeButton);
 
         volumeButton.addEventListener("click", () => {
@@ -105,7 +117,7 @@ const GameData = {
         progressBar.style.width = `${window.innerWidth * 0.8 / window.innerWidth * 100}%`;
         progressBar.style.height = `${window.innerHeight * 0.05 / window.innerHeight * 40}%`;
         progressBar.style.backgroundColor = "gray";
-        progressBar.style.zIndex = 1000;
+        progressBar.style.zIndex = 1001;
 
         let progressJuice = document.createElement("div");
         progressJuice.classList.add("progress_juice");
@@ -127,7 +139,7 @@ const GameData = {
         volumeBar.style.width = `${window.innerWidth * 0.15 / window.innerWidth * 70}%`;
         volumeBar.style.height = `${window.innerHeight * 0.05 / window.innerHeight * 40}%`;
         volumeBar.style.backgroundColor = "gray";
-        volumeBar.style.zIndex = 1000;
+        volumeBar.style.zIndex = 1001;
 
         let volumeJuice = document.createElement("div");
         volumeJuice.classList.add("volume_juice");
@@ -195,7 +207,7 @@ const StartGame = () => {
     GameData.insertVolumeBar();
     GameData.configureRunningProgressBar();
     GameData.configureVolumeRunningProgressBar();
-
+    GameData.createVideoOverlayLayout();
 }
 StartGame();
 

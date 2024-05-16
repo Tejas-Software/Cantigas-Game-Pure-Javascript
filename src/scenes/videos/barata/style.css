@@ -103,11 +103,11 @@ svg{
 video{
     background-color: black;
     position: absolute;
-    top: 0;
+    top: -2.5vh;
     left: 0;
     z-index: 1000;
     width: 100%;
-    height: 100vh;
+    height: 101vh;
     margin-top: -25px;
 }
 
